@@ -16,5 +16,7 @@ namespace Forum.Models
             get;
             set;
         }
+
+        public Guid DiscussionId { get; set; }
     }
 }
