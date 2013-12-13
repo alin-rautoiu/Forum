@@ -6,21 +6,15 @@ using System.Threading.Tasks;
 
 namespace Forum.Models
 {
-    public class Discussion: IEntity
+    public class Message: IEntity
     {
+        public string Author { get; set; }
+        public string Content { get; set; }
+
         public Guid Id
         {
             get;
             set;
-        }
-
-        public string Title { get; set; }
-
-        public ICollection<Message> Messages { get; set; }
-
-        public Discussion()
-        {
-            Messages = new List<Message>();
         }
     }
 }

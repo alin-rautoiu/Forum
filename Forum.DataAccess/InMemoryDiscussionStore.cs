@@ -15,8 +15,12 @@ namespace Forum.DataAccess
         {
             discussions = new Dictionary<Guid, Discussion>();
             var discussion = new Discussion { Id = Guid.NewGuid(), Title = "Despre oameni" };
+            discussion.Messages.Add(new Message { Id = Guid.NewGuid(), Author = "Coco", Content = "Au doua picioare" });
+            discussion.Messages.Add(new Message { Id = Guid.NewGuid(), Author = "Roco", Content = "Au doua urechi" });
             discussions.Add(discussion.Id, discussion);
             discussion = new Discussion { Id = Guid.NewGuid(), Title = "Despre tigri" };
+            discussion.Messages.Add(new Message { Id = Guid.NewGuid(), Author = "Kiki", Content = "Au patru picioare" });
+            discussion.Messages.Add(new Message { Id = Guid.NewGuid(), Author = "Riki", Content = "Au o coada" });
             discussions.Add(discussion.Id, discussion);
         }
 
