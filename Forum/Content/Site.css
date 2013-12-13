@@ -40,3 +40,14 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.container {
+    max-width: 800px;
+}
+
+.by {
+    font-style: italic;
+    font-size: smaller;
+    color: gray;
+    text-align: right;
+}

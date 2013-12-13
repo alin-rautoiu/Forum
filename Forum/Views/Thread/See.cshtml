@@ -4,7 +4,11 @@
     ViewBag.Title = "See";
 }
 
-<h2>See</h2>
+<h2>@Model.Title</h2>
 
-Ana are mere.
+@foreach (var message in Model.Messages)
+{
+    <div>@message.Content</div>
+    <div class="by">@message.Author</div>
+}
 
