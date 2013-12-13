@@ -1,4 +1,5 @@
-﻿using Forum.Models;
+﻿using Forum.DataAccess;
+using Forum.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +10,22 @@ namespace Forum.Controllers
 {
     public class ThreadController : Controller
     {
+        private readonly IDiscussionStore discussionStore;
+        public ThreadController(IDiscussionStore discussionStore)
+        {
+            this.discussionStore = discussionStore;
+        }
+
         public ActionResult Index()
         {
-            var discussions = new List<Discussion>
-            {
-                new Discussion {Id=Guid.NewGuid(), Title="Despre cocosi"},
-                new Discussion {Id=Guid.NewGuid(), Title="Despre compostoare"}
-            };
+            var discussions = discussionStore.All();
             return View(discussions);
         }
 
         public ActionResult See(Guid id)
         {
-            return View();
+            var discussion = discussionStore.Get(id);
+            return View(discussion);
         }
 
         public ActionResult About()
