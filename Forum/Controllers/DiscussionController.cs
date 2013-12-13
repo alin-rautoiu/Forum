@@ -8,10 +8,10 @@ using System.Web.Mvc;
 
 namespace Forum.Controllers
 {
-    public class ThreadController : Controller
+    public class DiscussionController : Controller
     {
         private readonly IDiscussionStore discussionStore;
-        public ThreadController(IDiscussionStore discussionStore)
+        public DiscussionController(IDiscussionStore discussionStore)
         {
             this.discussionStore = discussionStore;
         }
@@ -28,18 +28,6 @@ namespace Forum.Controllers
             return View(discussion);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
